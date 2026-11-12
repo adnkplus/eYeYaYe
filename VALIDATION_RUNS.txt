@@ -1,0 +1,5 @@
+eYeYaYe V9.0.0
+2026-11-02 — Python syntax + 65-test suite: PASS.
+2026-11-02 — Inspector staged-copy dry run: PASS; all 65 tests passed.
+2026-11-02 — Xvfb/Tk Inspector click-capture + new-widget tagging smoke: PASS.
+2026-11-02 — Xvfb/Tk full GUI construction + three independent camera switches: PASS.

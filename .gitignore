@@ -1,0 +1,11 @@
+.env
+backups/*
+cache/*
+logs/*
+runtime/*
+data/recordings/*
+data/events/*
+data/thumbnails/*
+cam3/rtmp_cam.py
+*.partial*
+__pycache__/

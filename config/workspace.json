@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "window_geometry": "2775x1515+768+181",
+  "page": "Export Studio",
+  "show_live": true,
+  "show_playback": true,
+  "live_camera_enabled": {
+    "cam2": true
+  },
+  "split_orientation": "side-by-side",
+  "sash_position": 1237,
+  "live_grid": {
+    "columns": 3,
+    "rows": 1
+  },
+  "playback_grid": {
+    "columns": 3,
+    "rows": 1
+  }
+}

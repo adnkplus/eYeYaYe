@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "cameras": [
+    {
+      "id": "cam1",
+      "name": "CAM1",
+      "type": "rtsp",
+      "enabled": true,
+      "rtsp_url": "rtsp://admin:password@192.168.10.102:554",
+      "username": "admin",
+      "password": "password",
+      "web_admin_url": "http://192.168.10.102/",
+      "web_admin_username": "",
+      "web_admin_password": "",
+      "clock_offset_seconds": 0,
+      "exclude_zones": [],
+      "audio_source_url": "",
+      "audio_source_username": "",
+      "audio_source_password": ""
+    },
+    {
+      "id": "cam2",
+      "name": "CAM2",
+      "type": "rtsp",
+      "enabled": true,
+      "rtsp_url": "rtsp://admin:password@192.168.10.101:554",
+      "username": "admin",
+      "password": "password",
+      "web_admin_url": "http://192.168.10.101/",
+      "web_admin_username": "",
+      "web_admin_password": "",
+      "clock_offset_seconds": 0,
+      "exclude_zones": [],
+      "audio_source_url": "",
+      "audio_source_username": "",
+      "audio_source_password": ""
+    },
+    {
+      "id": "cam3",
+      "name": "CAM3",
+      "type": "cam3",
+      "enabled": true,
+      "rtsp_url": "",
+      "username": "",
+      "password": "",
+      "web_admin_url": "http://192.168.10.104/",
+      "web_admin_username": "",
+      "web_admin_password": "",
+      "clock_offset_seconds": 0,
+      "exclude_zones": [],
+      "audio_source_url": "",
+      "audio_source_username": "",
+      "audio_source_password": "",
+      "rtmp_host": "192.168.10.104",
+      "rtmp_port": 80,
+      "rtmp_username": "admin",
+      "rtmp_password": "password",
+      "rtmp_stream_name": "720p.264"
+    }
+  ]
+}

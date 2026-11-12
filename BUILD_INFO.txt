@@ -1,0 +1,30 @@
+eYeYaYe 9.0.0 — native, project-contained media runtime
+Build date: 2026-11-02
+
+V9 additions
+- Per-camera LIVE DOCK switches; turning a live tile off stops only that local viewer and never disables camera ingestion or recording.
+- Archive table displays each file's containing directory and opens that directory directly.
+- Sidebar Inspector identifies clicked controls, resolves Tk callbacks to the owning project function, and previews the exact source file and line range. Its priority click-capture binding prevents accidental activation of the underlying control; widgets created later are captured too.
+- Inspector OK commits a syntax-valid function replacement atomically and preserves the previous source in backups/inspector/.
+- Inspector Cancel discards staged editor text.
+- Inspector Dry Run compiles the staged project and runs the full automated test suite in a disposable temporary copy without writing live source files.
+- Inspector Restart Everything requests the master-terminal lifecycle owner to stop and restart the GUI, engine, CAM3 bridge, recorders and the project-contained MediaMTX.
+
+Media runtime
+- One shared MediaMTX process runs from cam3/CAM3_LIVE_STANDALONE/bin/mediamtx.
+- FFmpeg/FFprobe run from that project-contained bin directory.
+- CAM1/CAM2 RTSP sources and CAM3 UDX/RTMP publisher share that one local RTSP router.
+- CAM3 protocol bridge/client and command catalog remain unchanged.
+- No host-wide /usr/local/bin/mediamtx dependency is introduced.
+
+Inspector safety model
+- Source editing is restricted to project-owned Python functions associated with clicked controls or the current page builder.
+- Accepted edits are syntax-checked, atomically written and backed up.
+- Dry Run never commits staged source to the live tree.
+- Python source edits take effect after Restart Everything; a saved source file is not hot-reloaded into an already-running interpreter.
+- Controls without an editable project callback show widget/page identity instead of inventing a source mapping.
+
+Build boundary
+- This source package includes the runtime builder but not downloaded MediaMTX/FFmpeg runtime executables.
+- Run python3 BUILD_RUNTIME.py once on the target Linux PC if the bundled runtime has not already been built.
+- Physical camera reception and target-PC audio/video output require local validation.

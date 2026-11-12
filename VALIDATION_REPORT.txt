@@ -1,0 +1,24 @@
+eYeYaYe V9.0.0 — VALIDATION REPORT
+Date: 2026-11-02
+Platform under test: Linux amd64, Python 3.13
+
+RESULTS
+- Python syntax compilation: PASS — all project Python sources.
+- Automated test suite: PASS — 65 tests.
+- Inspector staged-copy Dry Run: PASS — compiled all project Python files and passed all 65 tests in a disposable copy.
+- Inspector transaction tests: PASS — backup creation, syntax rejection without live-file modification, and stale-source detection.
+- Inspector event capture: PASS — Xvfb/Tk smoke test confirmed inspection suppresses the underlying control action, the Inspector button remains usable, and newly-created widgets receive the priority tag.
+- Full GUI construction: PASS — Xvfb/Tk smoke test built the three-camera Live & Playback page and exercised CAM1/CAM2/CAM3 independent switch states.
+- Archive containing-directory action: code-level tests PASS; opening the desktop file manager still requires target desktop validation.
+- Master lifecycle tests: PASS — Unix control socket request/acknowledgement, GUI process group termination, engine stop/start and GUI relaunch order.
+
+PRESERVED
+- CAM1/CAM2 source configuration and CAM3 UDX protocol/client sources were not altered.
+- Existing single project-contained MediaMTX/FFmpeg runtime ownership was not changed.
+- No host /usr/local/bin/mediamtx dependency was introduced.
+- Per-camera live switches stop only the local MPV preview. The FFmpeg tee recorder keeps writing original segments, while its bounded preview FIFO drops queued preview packets if no reader is present.
+
+LIMITATIONS
+- The build container does not have the user's physical cameras or target audio/video devices. Actual camera streams, MPV rendering/audio and file-manager launch require target-PC validation.
+- The source package contains the runtime builder, not downloaded MediaMTX/FFmpeg executables. Existing project-local runtime binaries are preserved by the V8.0.2 in-place updater.
+- Python source edits are committed immediately but the running interpreter loads them only after Restart Everything.
